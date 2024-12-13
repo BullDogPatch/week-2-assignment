@@ -28,8 +28,8 @@ const images = [
 const createThumbnailImages = (images) => {
   console.log(images);
   for (const image of images) {
-    // console.log(images);
-    console.log(image.largeImage);
+    const img = document.createElement('img');
+    console.log(img);
   }
 };
 
