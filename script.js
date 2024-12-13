@@ -37,6 +37,7 @@ const createThumbnailImages = (images) => {
     img.src = image.thumbnailImage;
     img.alt = image.altText;
     thumbnailImageContainer.appendChild(img);
+    img.addEventListener('click', () => console.log('test'));
   }
 };
 
