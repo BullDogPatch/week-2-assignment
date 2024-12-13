@@ -1,1 +1,1 @@
-![image]("C:\Users\craig\Downloads\wireframe.webp")
+![image of wireframe](wireframe.webp)
