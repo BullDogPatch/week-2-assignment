@@ -61,3 +61,5 @@ function createLargeImagesHandler(img) {
   //append the image to the largeImageContainer
   largeImageContainer.appendChild(image);
 }
+
+// createLargeImagesHandler(images[0]);
