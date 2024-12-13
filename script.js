@@ -48,18 +48,33 @@ createThumbnailImages(images);
 //TODO: I want to create my larger images
 //The larger images will be created when the user triggers the thumbnail images event
 //This function will be event handler for our images
-function createLargeImagesHandler(img) {
-  //I want to remove the image that's in the full screen, and create a new image with new properties
-  largeImageContainer.innerHTML = '';
-  //create an image element
+// function createLargeImagesHandler(img) {
+//   //I want to remove the image that's in the full screen, and create a new image with new properties
+//   largeImageContainer.innerHTML = '';
+//   //create an image element
+//   const image = document.createElement('img');
+//   //assign values to the image element
+//   image.src = img.src;
+//   image.alt = img.alt;
+//   //add a className to style the large image
+//   image.classList.add('large-image');
+//   //append the image to the largeImageContainer
+//   largeImageContainer.appendChild(image);
+// }
+
+const createLargeImagesHandler = (img) => {
   const image = document.createElement('img');
-  //assign values to the image element
   image.src = img.src;
   image.alt = img.alt;
-  //add a className to style the large image
   image.classList.add('large-image');
-  //append the image to the largeImageContainer
+
+  // Had to change largeImageContainer.innerHTML = '' as its wiping out the whole HTML for this part
+  const existingImage = largeImageContainer.querySelector('img');
+  if (existingImage) {
+    largeImageContainer.removeChild(existingImage);
+  }
+
   largeImageContainer.appendChild(image);
-}
+};
 
 // console.log(createLargeImagesHandler(images[0].largeImage));

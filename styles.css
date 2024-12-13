@@ -4,15 +4,25 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling */
+}
+
 .large-image-container {
   width: 100vw;
   height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .large-image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensures the image covers the entire screen, maintaining aspect ratio */
 }
 
 .thumbnail-container {
@@ -23,9 +33,7 @@
   position: fixed;
   top: 10px;
   left: 50%;
-  transform: translateX(
-    -50%
-  ); /* https://medium.com/@okothelvis137/the-secrete-behind-transform-translate-50-css-property-3c46e7365bc3#:~:text=The%20transform%3A%20translateX(%2D50%25)&text=It%20moves%20the%20element%20left,to%20the%20left%20by%20100px.*/
+  transform: translateX(-50%);
   z-index: 10;
 }
 
@@ -34,4 +42,30 @@
   width: 100px;
   height: 75px;
   object-fit: cover;
+}
+
+/* Navigation buttons */
+.previous-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.previous-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
 }
