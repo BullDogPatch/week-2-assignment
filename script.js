@@ -21,7 +21,7 @@ const images = [
 
 const createThumbnailImages = (images) => {
   for (const image of images) {
-    console.log(image);
+    console.log(image.largeImage);
   }
 };
 
