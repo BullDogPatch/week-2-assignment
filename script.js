@@ -18,3 +18,11 @@ const images = [
       'https://images.unsplash.com/photo-1709789945272-daa35e0f3591?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGVuZ2xpc2glMjBidWxsZG9nc3xlbnwwfHwwfHx8MA%3D%3D',
   },
 ];
+
+const createThumbnailImages = (images) => {
+  for (const image of images) {
+    console.log(image);
+  }
+};
+
+createThumbnailImages(images);
