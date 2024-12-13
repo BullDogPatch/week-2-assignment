@@ -29,6 +29,7 @@ const createThumbnailImages = (images) => {
   console.log(images);
   for (const image of images) {
     const img = document.createElement('img');
+    img.src = image.thumbnailImage;
     console.log(img);
   }
 };
