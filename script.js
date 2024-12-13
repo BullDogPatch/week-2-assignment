@@ -36,7 +36,7 @@ const createThumbnailImages = (images) => {
     const img = document.createElement('img');
     img.src = image.thumbnailImage;
     img.alt = image.altText;
-    console.log(img);
+    thumbnailImageContainer.appendChild(img);
   }
 };
 
