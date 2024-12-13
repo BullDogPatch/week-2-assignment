@@ -23,7 +23,9 @@
   position: fixed;
   top: 10px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(
+    -50%
+  ); /* https://medium.com/@okothelvis137/the-secrete-behind-transform-translate-50-css-property-3c46e7365bc3#:~:text=The%20transform%3A%20translateX(%2D50%25)&text=It%20moves%20the%20element%20left,to%20the%20left%20by%20100px.*/
   z-index: 10;
 }
 
