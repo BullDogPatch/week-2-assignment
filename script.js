@@ -62,4 +62,4 @@ function createLargeImagesHandler(img) {
   largeImageContainer.appendChild(image);
 }
 
-createLargeImagesHandler(images[0]);
+// console.log(createLargeImagesHandler(images[0].largeImage));
