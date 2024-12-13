@@ -1,0 +1,9 @@
+.thumbnail-container {
+  width: 300px;
+  display: flex;
+}
+
+.thumbnail-container img {
+  cursor: pointer;
+  width: 100px;
+}
