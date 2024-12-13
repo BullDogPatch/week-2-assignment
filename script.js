@@ -35,6 +35,7 @@ const createThumbnailImages = (images) => {
   for (const image of images) {
     const img = document.createElement('img');
     img.src = image.thumbnailImage;
+    img.alt = image.altText;
     console.log(img);
   }
 };
