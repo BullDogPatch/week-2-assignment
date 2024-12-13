@@ -1,3 +1,9 @@
+const largeImageContainer = document.querySelector('.large-image-container');
+const thumbnailImageContainer = document.querySelector('.thumbnail-container');
+
+console.log(largeImageContainer);
+console.log(thumbnailImageContainer);
+
 const images = [
   {
     largeImage:
@@ -20,7 +26,9 @@ const images = [
 ];
 
 const createThumbnailImages = (images) => {
+  console.log(images);
   for (const image of images) {
+    // console.log(images);
     console.log(image.largeImage);
   }
 };
