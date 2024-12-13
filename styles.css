@@ -1,6 +1,7 @@
 .thumbnail-container {
   width: 300px;
   display: flex;
+  z-index: 1000;
 }
 
 .thumbnail-container img {
