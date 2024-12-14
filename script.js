@@ -3,7 +3,7 @@ const thumbnailImageContainer = document.querySelector('.thumbnail-container');
 const previousButton = document.querySelector('.previous-btn');
 const nextButton = document.querySelector('.next-btn');
 
-let index = 0;
+let imageIndex = 0;
 
 const images = [
   {
@@ -26,57 +26,56 @@ const images = [
 ];
 
 const createThumbnailImages = (images) => {
-  for (const image of images) {
+  // for (const image of images) {
+  //   const img = document.createElement('img');
+  //   img.src = image.thumbnailImage;
+  //   img.alt = image.altText;
+  //   thumbnailImageContainer.appendChild(img);
+  //   img.addEventListener('click', () => createLargeImagesHandler(img));
+  // }
+
+  // need index
+  images.forEach((image, idx) => {
     const img = document.createElement('img');
     img.src = image.thumbnailImage;
     img.alt = image.altText;
     thumbnailImageContainer.appendChild(img);
-    img.addEventListener('click', () => createLargeImagesHandler(img));
-  }
+    img.addEventListener('click', () => createLargeImagesHandler(images[idx]));
+  });
 };
 
 createThumbnailImages(images);
 
-//TODO: I want to create my larger images
-//The larger images will be created when the user triggers the thumbnail images event
-//This function will be event handler for our images
-// function createLargeImagesHandler(img) {
-//   //I want to remove the image that's in the full screen, and create a new image with new properties
-//   largeImageContainer.innerHTML = '';
-//   //create an image element
-//   const image = document.createElement('img');
-//   //assign values to the image element
-//   image.src = img.src;
-//   image.alt = img.alt;
-//   //add a className to style the large image
-//   image.classList.add('large-image');
-//   //append the image to the largeImageContainer
-//   largeImageContainer.appendChild(image);
-// }
-
-const selectImage = (index) => {
-  console.log(index);
-};
-
-previousButton.addEventListener('click', () => {
-  console.log('Left');
-});
-
-nextButton.addEventListener('click', () => {
-  console.log('Right');
-});
-
 const createLargeImagesHandler = (img) => {
-  const image = document.createElement('img');
-  image.src = img.src;
-  image.alt = img.alt;
-  image.classList.add('large-image');
-
-  // Had to change largeImageContainer.innerHTML = '' as its wiping out the whole HTML for this part
-  const existingImage = largeImageContainer.querySelector('img');
-  if (existingImage) {
-    largeImageContainer.removeChild(existingImage);
+  let image = largeImageContainer.querySelector('img');
+  // Create the image if it doesn't exist
+  if (!image) {
+    image = document.createElement('img');
+    image.classList.add('large-image');
+    largeImageContainer.appendChild(image);
   }
 
-  largeImageContainer.appendChild(image);
+  image.src = img.thumbnailImage;
+  image.alt = img.altText;
 };
+
+console.log(imageIndex);
+
+const selectImage = (index) => {
+  console.log(imageIndex);
+  imageIndex += index;
+  console.log(images[imageIndex]);
+
+  if (imageIndex >= images.length) {
+    imageIndex = 0;
+  }
+
+  if (imageIndex < 0) {
+    imageIndex = images.length - 1;
+  }
+
+  createLargeImagesHandler(images[imageIndex]);
+};
+
+previousButton.addEventListener('click', () => selectImage(-1));
+nextButton.addEventListener('click', () => selectImage(1));
