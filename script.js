@@ -1,9 +1,6 @@
 const largeImageContainer = document.querySelector('.large-image-container');
 const thumbnailImageContainer = document.querySelector('.thumbnail-container');
 
-console.log(largeImageContainer);
-console.log(thumbnailImageContainer);
-
 let index = 0;
 
 const images = [
@@ -33,7 +30,6 @@ const images = [
 ];
 
 const createThumbnailImages = (images) => {
-  console.log(images);
   for (const image of images) {
     const img = document.createElement('img');
     img.src = image.thumbnailImage;
@@ -76,5 +72,3 @@ const createLargeImagesHandler = (img) => {
 
   largeImageContainer.appendChild(image);
 };
-
-// console.log(createLargeImagesHandler(images[0].largeImage));
