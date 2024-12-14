@@ -72,3 +72,10 @@ body {
 .next-btn {
   right: 10px;
 }
+
+@media (max-width: 600px) {
+  .previous-btn,
+  .next-btn {
+    display: none;
+  }
+}
