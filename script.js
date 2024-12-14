@@ -1,5 +1,7 @@
 const largeImageContainer = document.querySelector('.large-image-container');
 const thumbnailImageContainer = document.querySelector('.thumbnail-container');
+const previousButton = document.querySelector('.previous-btn');
+const nextButton = document.querySelector('.next-btn');
 
 let index = 0;
 
@@ -57,6 +59,10 @@ createThumbnailImages(images);
 //   //append the image to the largeImageContainer
 //   largeImageContainer.appendChild(image);
 // }
+
+const selectImage = (index) => {
+  console.log(index);
+};
 
 const createLargeImagesHandler = (img) => {
   const image = document.createElement('img');
