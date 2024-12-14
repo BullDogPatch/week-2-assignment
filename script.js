@@ -58,6 +58,14 @@ const selectImage = (index) => {
   console.log(index);
 };
 
+previousButton.addEventListener('click', () => {
+  console.log('Left');
+});
+
+nextButton.addEventListener('click', () => {
+  console.log('Right');
+});
+
 const createLargeImagesHandler = (img) => {
   const image = document.createElement('img');
   image.src = img.src;
