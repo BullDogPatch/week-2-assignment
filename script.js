@@ -66,6 +66,19 @@ const selectImage = (index) => {
   imageIndex += index;
   console.log(images[imageIndex]);
 
+  // This bit I know from using React.js using state, going back to basic JS is more difficult, but here is a modified versiojn from the react docs
+  /*
+export default function Gallery() {
+  const [index, setIndex] = useState(0);
+
+  function handleClick() {
+    if(index < sculptureList.length - 1){
+      
+    setIndex(index + 1);
+    }
+  }
+    */
+
   if (imageIndex >= images.length) {
     imageIndex = 0;
   }
