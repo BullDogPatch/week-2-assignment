@@ -39,8 +39,14 @@ const createThumbnailImages = (images) => {
     const img = document.createElement('img');
     img.src = image.thumbnailImage;
     img.alt = image.altText;
+    img.setAttribute('tabindex', '0');
     thumbnailImageContainer.appendChild(img);
     img.addEventListener('click', () => createLargeImagesHandler(images[idx]));
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        createLargeImagesHandler(image);
+      }
+    });
   });
 };
 
