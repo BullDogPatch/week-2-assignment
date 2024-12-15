@@ -8,7 +8,7 @@
 
 🎯 Were there any requirements or goals that youwere unable to achieve?
 
-- I was not able to complete all the stretch requirements
+- I was not able to complete all the stretch requirements, also I wanted my thumbnails to have a red border when the user used the buttons to navigate the images.
 
 🎯 If so, what was it that you found difficult about these tasks?
 
