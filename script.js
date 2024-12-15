@@ -92,3 +92,5 @@ export default function Gallery() {
 
 previousButton.addEventListener('click', () => selectImage(-1));
 nextButton.addEventListener('click', () => selectImage(1));
+
+createLargeImagesHandler(images[imageIndex]);
