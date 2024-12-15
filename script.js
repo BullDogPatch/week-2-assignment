@@ -100,3 +100,14 @@ previousButton.addEventListener('click', () => selectImage(-1));
 nextButton.addEventListener('click', () => selectImage(1));
 
 createLargeImagesHandler(images[imageIndex]);
+
+window.addEventListener('keydown', (e) => {
+  console.log(e.key);
+  if (e.key === 'ArrowRight') {
+    selectImage(1);
+  }
+
+  if (e.key === 'ArrowLeft') {
+    selectImage(-1);
+  }
+});
